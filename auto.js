@@ -14,6 +14,7 @@ var userNameInfo = "13943110476";
 userName.setText(userNameInfo);
 
 //填入密码
+//点击了密码框在屏幕上的位置，未来可能需要改动
 var password =id("user_phone_num_info").findOne()
 var determineClickPassword = click(58,386)
 console.log(determineClickPassword)

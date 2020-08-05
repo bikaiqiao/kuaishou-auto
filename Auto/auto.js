@@ -3,15 +3,15 @@ launchApp("快手");
 //点击登入按钮
 var searchButton = id("left_text").findOne();
 searchButton.click();
-/*只有在第一次登入安装app的时候才需要这个操作
+//只有在第一次登入安装app的时候才需要这个操作
 //点击其他登入方式
-//var otherLoginButton = id("other_login_tv").findOne();
-//otherLoginButton.click();
+var otherLoginButton = id("other_login_tv").findOne();
+otherLoginButton.click();
 
-//点击使用账号密码登入
-//var usePassword = id("login_mode_switcher").findOne();
-//usePassword.click();
-*/
+// 点击使用账号密码登入
+var usePassword = id("login_mode_switcher").findOne();
+usePassword.click();
+//
 
 //填入用户名
 var userName =id("phone_et").findOne();
@@ -28,3 +28,5 @@ Text(passwordInfo)
 //登入
 // var confirmBtn = id("confirm_btn").findOne()
 // confirmBtn.click();
+
+//登入后可能会有插图验证码

@@ -17,16 +17,6 @@ npm install koa-websocket
  启动服务:<br>
 node ./server/server
 
-# 项目结构 #
-```
-|-- Auto-----------------------Auto.js文件夹
-    |   |-- auto.js------------自动打开快手，登入
-    |   |-- autoWS.js----------websocket操作
-    |   |-- message.js---------打开消息页面
-    |-- server
-        |-- index.html---------websocket连接测试
-        |-- server.js----------服务端
-```
 
 
 

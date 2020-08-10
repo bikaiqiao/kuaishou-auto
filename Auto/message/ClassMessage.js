@@ -31,10 +31,27 @@ message.findNameByHistoryList = function (name) {
   for (let i = 0; i < contacts.size(); i++) {
     if (contacts.get(i).text() == name) {
       contacts.get(0).parent().click()
+      return true
     } else {
       console.log("消息历史中没有这个人")
+      return false
     }
   }
+}
+//根据发消息人发来的消息提醒进入
+//question：如果有多个联系人怎么办
+message.noticeMessage = function () {
+  let click = id("notify").findOne().parent().click()
+  sleep(1000)
+  //找到所有消息然后倒叙
+  console.show()
+  var allMessage = id("message").find()
+  // for(i = 0;i<allMessage.size();i++){
+  //   console.log(allMessage.get(i).text())
+  // }
+  var allMessageNum = allMessage.size()
+  console.log(allMessage.get(allMessageNum - 1).text())
+  return allMessage.get(allMessageNum - 1).text()
 }
 //在关注列表中搜索用户名
 message.findNameByFollowList = function (name) {

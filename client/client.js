@@ -1,14 +1,14 @@
 var net = require('net');
 var port = 3000;
 var host = '192.168.3.100';
-var client = new net.Socket();
 //创建socket客户端
+var client = new net.Socket();
 // client.setEncoding('binary');
 //连接到服务端
 client.connect(port, host, function () {
-  //向端口写入数据到达服务端
   console.log("连接成功")
 });
+//根据服务器端的数据返回信息
 client.on('data', function (data) {
   console.log('from server:' + data);
   if (data == "ding") {

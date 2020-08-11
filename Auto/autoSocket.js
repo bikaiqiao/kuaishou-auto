@@ -19,8 +19,9 @@ module.exports = function socket(receiveMessage){
     var printWriter = new PrintWriter(outputStream);
     var temp = null;
     var info = "";
-    printWriter.print("receiveMessage");
+    printWriter.print(receiveMessage);
     printWriter.flush();
+    //启动后会一直等待客户端连接
     while (true) {
         temp = bufferedReader.readLine();
         log(temp)

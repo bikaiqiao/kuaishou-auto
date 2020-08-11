@@ -18,7 +18,13 @@ npm install koa-websocket
 node ./server/server
 
 # 文档 #
+## login.js
+还没有做封装的登入方法
+## socket()| autoSocket.js
+该文件应被放在虚拟机的autoPro.js的文件夹中
+引用java的socket连接方式，对外暴露一个socket(receiveMessage)
 ## ClassMessage
+该文件应被放在虚拟机的autoPro.js的文件夹中
 ### goToMessagePage()
 #### 进入快手的私信页面
 ### findNameByHistoryList(name)
@@ -32,7 +38,6 @@ node ./server/server
 
 ### sendMessage()
 在已经进入聊天页面后发送消息
-
 
 
 

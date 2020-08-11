@@ -17,6 +17,22 @@ npm install koa-websocket
  启动服务:<br>
 node ./server/server
 
+# 文档 #
+## ClassMessage
+### goToMessagePage()
+#### 进入快手的私信页面
+### findNameByHistoryList(name)
+根据name在历史记录中查找,如果找到了返回true，没找到返回false
+
+### noticeMessage()
+如果有人发送消息则根据消息提示进入和该联系人的聊天页面并提取最后一条消息。
+
+### findNameByFollowList(name)
+在关注列表中根据name搜索用户
+
+### sendMessage()
+在已经进入聊天页面后发送消息
+
 
 
 

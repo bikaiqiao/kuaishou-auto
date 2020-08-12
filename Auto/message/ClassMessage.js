@@ -41,7 +41,11 @@ message.findNameByHistoryList = function (name) {
 //根据发消息人发来的消息提醒进入
 //question：如果有多个联系人怎么办
 message.noticeMessage = function () {
-  let click = id("notify").findOne().parent().click()
+  let varNotify = null
+  while (varNotify == null) {
+    varNotify = id("notify").findOne(1000)
+  }
+  varNotify.parent().click()
   sleep(1000)
   //找到所有消息然后倒叙
   console.show()

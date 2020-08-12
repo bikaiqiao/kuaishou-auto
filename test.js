@@ -14,5 +14,5 @@ let messageText = "ding"
 
 // message1.sendMessage(messageText)
 
-// var test = message1.noticeMessage()
-socket("ding")
+var test = message1.noticeMessage()
+var reviceMessage = socket(test)

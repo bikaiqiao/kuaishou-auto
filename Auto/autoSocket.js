@@ -6,7 +6,7 @@ importClass('java.io.OutputStream');
 importClass('java.io.PrintWriter');
 importClass('java.net.Socket');
 importClass('java.net.ServerSocket');
-module.exports = function socket(receiveMessage){
+module.exports = function socket(receiveMessage) {
     var serversocket = new ServerSocket(3000);
     log('服务端已经启动,正在等待客户端连接...');
     var socket = serversocket.accept();
@@ -29,11 +29,10 @@ module.exports = function socket(receiveMessage){
         if (temp != null) {
             info += temp;
             log(info);
-            // break;
+            break;
         }
         sleep(200);
     }
-    
     socket.shutdownOutput(); //关闭输出流
     //关闭对应资源
     printWriter.close();
@@ -41,4 +40,5 @@ module.exports = function socket(receiveMessage){
     bufferedReader.close();
     inputStream.close();
     serversocket.close();
+    return info
 }

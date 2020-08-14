@@ -11,8 +11,13 @@ client.connect(port, host, function () {
 //根据服务器端的数据返回信息
 client.on('data', function (data) {
   console.log('from server:' + data);
-  if (data == "ding") {
+  messagePayload = JSON.parse(data)
+  console.log(messagePayload.content)
+  if (messagePayload.content == "ding") {
     client.write("dong\r\n");
+  }
+  else{
+    client.write("\r\n")
   }
 });
 client.on('error', function (error) {

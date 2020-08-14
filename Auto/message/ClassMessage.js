@@ -38,25 +38,6 @@ message.findNameByHistoryList = function (name) {
     }
   }
 }
-//根据发消息人发来的消息提醒进入
-//question：如果有多个联系人怎么办
-message.noticeMessage = function () {
-  let varNotify = null
-  while (varNotify == null) {
-    varNotify = id("notify").findOne(1000)
-  }
-  varNotify.parent().click()
-  sleep(1000)
-  //找到所有消息然后倒叙
-  console.show()
-  var allMessage = id("message").find()
-  // for(i = 0;i<allMessage.size();i++){
-  //   console.log(allMessage.get(i).text())
-  // }
-  var allMessageNum = allMessage.size()
-  console.log(allMessage.get(allMessageNum - 1).text())
-  return allMessage.get(allMessageNum - 1).text()
-}
 //在关注列表中搜索用户名
 message.findNameByFollowList = function (name) {
 
@@ -75,6 +56,40 @@ message.findNameByFollowList = function (name) {
   if (findName.get(0).parent()) {
     findName.get(0).parent().click()
   }
+}
+//根据发消息人发来的消息提醒进入
+//question：如果有多个联系人怎么办
+message.noticeMessage = function () {
+  let varNotify = null
+  while (varNotify == null) {
+    varNotify = id("notify").findOne(1000)
+    log("重新寻找")
+  }
+  log("找到消息")
+  var target = varNotify.parent()
+  var UserName = target.child(1).text()
+  target.click()
+  sleep(1000)
+  //找到所有消息然后倒叙
+  var allMessage = id("message").find()
+  // for(i = 0;i<allMessage.size();i++){
+  //   console.log(allMessage.get(i).text())
+  // }
+  var allMessageNum = allMessage.size()
+  var str = JSON.stringify(allMessage.get(allMessageNum - 1))
+  var n = str.search(/mSourceNodeId/);
+  var str2 = str.substring(n+15,n+34)
+  // log(str2)
+  var messagePayload = {
+    fromUserName: 'bot',
+    toUserName:UserName,
+    msgId:str2,
+    content:allMessage.get(allMessageNum - 1).text()
+  }
+  var strMessagePayload = JSON.stringify(messagePayload)
+  console.log(allMessage.get(allMessageNum - 1).sourceNodeId())
+  console.log(str2)
+  return strMessagePayload
 }
 //发送消息
 message.sendMessage = function (text) {

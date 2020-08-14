@@ -24,7 +24,10 @@ while (true) {
   //如果有新的消息则找到这个消息
   //进入阻塞状态
   log("判断是否有新消息")
+  // js对象转化为json
+  // const payload = JSON.stringify(data)
   var receiveMessage = message2.noticeMessage();
+  log(receiveMessage)
   printWriter.print(receiveMessage);
   printWriter.flush();
   temp = bufferedReader.readLine();

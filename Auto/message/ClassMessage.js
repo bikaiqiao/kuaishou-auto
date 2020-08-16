@@ -60,13 +60,13 @@ message.findNameByFollowList = function (name) {
 //根据发消息人发来的消息提醒进入
 //question：如果有多个联系人怎么办
 message.noticeMessage = function () {
-  let varNotify = null
-  while (varNotify == null) {
-    varNotify = id("notify").findOne(1000)
+  let Notify = null
+  while (Notify == null) {
+    Notify = id("notify").findOne(1000)
     log("重新寻找")
   }
   log("找到消息")
-  var target = varNotify.parent()
+  var target = Notify.parent()
   var UserName = target.child(1).text()
   target.click()
   sleep(1000)

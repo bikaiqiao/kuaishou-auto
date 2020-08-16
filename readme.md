@@ -13,9 +13,9 @@ npm install koa-websocket
 ## autoPro.js ##
 ```ctrl+shift+p``` 搜索 <b>运行脚本</b><br>
 在vscode上与虚拟机联调autoPro.js的方法参考：https://www.52pojie.cn/forum.php?mod=viewthread&tid=1169466
-## server ##
+## client ##
  启动服务:<br>
-node ./server/server
+node ./client/client
 
 # 文档 #
 ## login.js

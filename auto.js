@@ -31,7 +31,8 @@ while (true) {
   printWriter.print(receiveMessage);
   printWriter.flush();
   temp = bufferedReader.readLine();
-  log(temp)
+  sleep(1000)
+  log("服务端收到消息"+temp)
   // temp = bufferedReader.read();
   if (temp != null) {
     info = temp;

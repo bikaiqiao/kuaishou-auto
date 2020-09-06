@@ -1,13 +1,6 @@
 # 安装： #
-## autoPro.js部分 ##
+## autoPro.js ##
 需要安装autoPro.js在手机端(或者虚拟机上)
-## server部分 ##
-安装koa的必要插件
-```
-npm install koa
-npm install koa-route
-npm install koa-websocket
-```
 
 # 开始 #
 ## autoPro.js ##

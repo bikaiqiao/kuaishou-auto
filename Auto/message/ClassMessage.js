@@ -1,30 +1,4 @@
 var message = {}
-//进入私信页面
-message.goToMessagePage = function () {
-  //点击最左侧按钮
-  let click = id("left_btn").findOne().click();
-  //点击私信进入私信页面
-  var BtnMessage = id("tab_message").findOne();
-  var clickBtnMessage = BtnMessage.click();
-  sleep(1000)
-  //auto.js 4.x版本
-  /*
-  var contacts = id("name_layout").find()
-  var contactsChild = [];
-  var selectTextContacts;
-  for(let i = 0;i<contacts.size();i++){
-    contactsChild[i] = contacts.get(i).child(0).child(0)
-    if(contactsChild[i].text() == "纠结26"){
-      selectTextContacts = contactsChild[i]
-    }
-  }
-  //联系人名称
-  console.log(selectTextContacts.text());
-  //根据联系人名称点击进入私信界面
-  var selectContactsParent = selectTextContacts.parent().parent().parent()
-  selectContactsParent.click();
-  */
-}
 //在私信页面直接查找要发送消息的人
 message.findNameByHistoryList = function (name) {
   var contacts = id("name").find()
@@ -78,7 +52,8 @@ message.noticeMessage = function () {
   if (isImage == '[图片]') {
     //找到图片并进行图片转码
     //保存图片操作
-    sleep(500);sleep(500);
+    sleep(500);
+    sleep(500);
     var imagePosition = id('image').findOne().bounds()
     var clickImage = click(imagePosition.centerX(), imagePosition.centerY())
     sleep(500);
@@ -97,6 +72,8 @@ message.noticeMessage = function () {
     log(imageBase64)
     // 回收图片
     img.recycle();
+    //删除图片文件
+    var remove = files.remove("/storage/emulated/0/DCIM/" + arr[0])
   } else {
     //找到所有消息然后倒叙
     var allMessage = id("message").find()

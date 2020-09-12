@@ -54,9 +54,6 @@ while (true) {
 
 
 
-
-
-
 socket.shutdownOutput(); //关闭输出流
 //关闭对应资源
 printWriter.close();

@@ -12,6 +12,15 @@
 node ./client/client<br/>
 该测试服务的代码最终将会被移植到puppet上（目前已完成对消息的移植）
 
+## 运行顺序
+为了防止消息监听的失效，应该按照以下步骤运行
+1. first start up autoPro.js
+2. second start up kuaishou app
+3. third enter the message page
+4. fourth start up the script(as server)
+5. fifth start up the puppet
+
+
 # 文档 #
 ## login(phone,pwd)
 phone:登入需要的手机号<br/>

@@ -1,6 +1,6 @@
-// launchApp("快手");
 
-function login(phone, pwd) {
+var login = {}
+login.login = function(phone, pwd) {
   var phone_number = id("phone_et").findOne()
   var password_number = id("password_et").findOne()
   if (text("手机号登录").findOne()) {
@@ -19,5 +19,4 @@ function login(phone, pwd) {
     desc("私信").findOne().click()
   }
 }
-
-login(13943110476,199910021)
+module.exports = login;
